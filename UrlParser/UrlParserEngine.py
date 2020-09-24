@@ -69,7 +69,11 @@ class IncomingInterface:
             return False
             
         # Get information about the source path field
-        self.SourceField = record_info_in.get_field_by_name(self.parent.url)
+        try:
+            self.SourceField = record_info_in.get_field_by_name(self.parent.url)
+        except Exception as e:
+            self.parent.display_error_msg(f'Invalid source field: {self.parent.url}')
+            return False
         #match_field_type: Sdk.FieldType = self.SourceField.type
         #match_field_size: int = self.SourceField.size
 
@@ -79,9 +83,9 @@ class IncomingInterface:
         #output field config
         self.fields = [['protocol', Sdk.FieldType.string, 20],
                     ['net_location', Sdk.FieldType.string, 100],
-                    ['path', Sdk.FieldType.string, 100],
-                    ['query', Sdk.FieldType.string, 100],
-                    ['parsed_query', Sdk.FieldType.string, 100],
+                    ['path', Sdk.FieldType.string, 1000],
+                    ['query', Sdk.FieldType.string, 1000],
+                    ['parsed_query', Sdk.FieldType.string, 1000],
                     ['fragment', Sdk.FieldType.string, 100],
                     ['hostname', Sdk.FieldType.string, 100],
                     ['port', Sdk.FieldType.int32,10]]

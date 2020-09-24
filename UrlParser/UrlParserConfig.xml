@@ -3,15 +3,15 @@
   <EngineSettings EngineDll="Python" EngineDllEntryPoint="UrlParserEngine.py" SDKVersion="10.1" />
   <GuiSettings Html="UrlParserGUI.html" Icon="UrlParserIcon.png" Help="https://github.com/bobpeers/Alteryx_SDK_UrlParser" SDKVersion="10.1">
     <InputConnections>
-      <Connection Name="Input" AllowMultiple="False" Optional="False" Type="Connection" Label="I"/>
+      <Connection Name="Input" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
     </InputConnections>
     <OutputConnections>
-      <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label="O"/>
+      <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
     </OutputConnections>
   </GuiSettings>
   <Properties>
     <MetaInfo>
-      <Name>URL Parser</Name>
+      <Name>URL Parse</Name>
       <Description>Parse Uniform Resource Locator (URL) strings up in components (addressing scheme, network location, path etc.)</Description>
       <CategoryName>Parse</CategoryName>
       <SearchTags>python, parse, url, ssh, mailto, ftp, sftp, http, https</SearchTags>
